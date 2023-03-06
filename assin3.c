@@ -1,28 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    int length, width;
+    char name[50];
+    int english, maths, science;
+    float average;
 
-    // Validate user input for length
-    do {
-        printf("Enter the length of the rectangle (non-negative): ");
-        scanf("%d", &length);
-    } while (length < 0);
+    // Input student details
+    printf("Enter the name of the student: ");
+    scanf("%s", name);
 
-    // Validate user input for width
-    do {
-        printf("Enter the width of the rectangle (non-negative): ");
-        scanf("%d", &width);
-    } while (width < 0);
+    printf("Enter the English mark: ");
+    scanf("%d", &english);
 
-    // Calculate perimeter and area
-    int perimeter = 2 * (length + width);
-    int area = length * width;
+    printf("Enter the Maths mark: ");
+    scanf("%d", &maths);
 
-    // Print results
-    printf("The length and width of the rectangle are %d and %d, respectively.\n", length, width);
-    printf("The perimeter of the rectangle is %d.\n", perimeter);
-    printf("The area of the rectangle is %d.\n", area);
+    printf("Enter the Science mark: ");
+    scanf("%d", &science);
+
+    // Calculate average mark
+    average = (english + maths + science) / 3.0;
+
+    // Display student details
+    printf("Name: %s\n", name);
+    printf("Average mark: %.2f\n", average);
 
     return 0;
 }
